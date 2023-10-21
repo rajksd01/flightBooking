@@ -1,6 +1,6 @@
-import express from "express";
-import { PORT } from "./config/ServerConfig.js";
-import bodyParser from "body-parser";
+const express = require("express");
+const { PORT } = "./config/ServerConfig.js";
+const bodyParser = require("body-parser");
 
 const getStarted = async () => {
   const app = express();
