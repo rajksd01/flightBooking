@@ -46,6 +46,10 @@ class CityRepository {
     const city = await City.update(data,{where:{id:cityId}})
     return city;
   }
+  catch (error){
+    console.log(error);
+    throw {error}
+  }
 
  }
 
