@@ -31,7 +31,7 @@ class CityRepository {
 
   async getCity(cityId) {
     try {
-      const city = await City.findByPK(cityId);
+      const city = await City.findByPk(cityId);
       return city;
     } catch (error) {
       console.log(error);
@@ -39,20 +39,16 @@ class CityRepository {
     }
   }
 
-
-// update a city
- async updateCity(cityId,{name}){
-  try{
-    const city = await City.update(data,{where:{id:cityId}})
-    return city;
+  // update a city
+  async updateCity(cityId, data) {
+    try {
+      const city = await City.update(data, { where: { id: cityId } });
+      return city;
+    } catch (error) {
+      console.log(error);
+      throw { error };
+    }
   }
-  catch (error){
-    console.log(error);
-    throw {error}
-  }
-
- }
-
 }
 
 module.exports = CityRepository;
