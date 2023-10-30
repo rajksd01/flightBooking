@@ -31,7 +31,8 @@ class CityRepository {
 
   async getCity(cityId) {
     try {
-      const city = await City.findByPk(cityId);
+      console.log(cityId);
+      const city = await City.findAll({ where: { id: cityId } });
       return city;
     } catch (error) {
       console.log(error);
@@ -47,6 +48,17 @@ class CityRepository {
     } catch (error) {
       console.log(error);
       throw { error };
+    }
+  }
+
+  // fetch all cities
+  async getAllCities() {
+    try {
+      const cities = await City.findAll();
+      return cities;
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
   }
 }
