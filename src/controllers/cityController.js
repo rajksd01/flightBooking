@@ -99,7 +99,7 @@ const getAllCities = async (req, res) => {
       data: {},
       success: false,
       message: "Unable to fetch a city",
-      error: error,
+      error: {error},
     });
   }
 };

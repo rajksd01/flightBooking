@@ -15,7 +15,7 @@ const setupAndStartServer = async () => {
   app.use("/api", apiRoutes);
 
   app.listen(3003, async () => {
-    console.log(process.env)
+    console.log(process.env);
     console.log(PORT);
     console.log("server is running");
   });
